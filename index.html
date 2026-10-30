@@ -3,62 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExamenE2</title>
+    <title>Recibo Telefonico</title>
     <style>
 
-     body{
-        background-color: rgb(64, 232, 137);
-     }
+        *{
+            background-color: rgb(64, 150, 97);
+        }
+
+        body {
+           
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        div{
+
+            margin-bottom: 10px;
+        }
+
+        form{
+            border: 5px solid black;
+            width: 500px;
+             
+        }
+ 
+        h1{
+            margin: 15;
+            text-align: center;
+        }
 
 
-    button{
-    
-    background-color: rgb(59, 61, 61); 
-    color: rgb(247, 242, 242);
-    font-size: 12px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: none;
-    padding: 8px 16px;
-}
+        button{
+            background-color: #616464;
+        }
 
-button:hover {
-    background-color: #454444;
-}
+        button:hover{
+            background-color: #706e6e;
+        }
+
+        select{
+            background-color: rgb(255, 254, 254);
+        }
 
 
-.btn{
-    text-align: center;
-}
     </style>
+    <script>
+        alert
+    </script>
 </head>
 <body>
 
-           <h1>RECIBO TELEFONICO</h1>
-<legend>
-        <form>
-		
-			<div class="fields">
-				<label for="time">minutos de llamada al celular:(1.00 c/u)</label>
-				<input id="name" type="text" name="name" autocomplete="off"> 	
-			</div>
-<br>
-        <label for="text">Tipo de plan</label>
-         
-<br>
+    <h1 style="color: rgb(0, 21, 255);">Recibo Telefonico</h1>
+    
+    <br>
 
-        <label for="text">Otros servicios</label>
+    <form action="">
+
+        <div>
+
+            <div id="seccion-minutos">
+                <label for="minutos">
+                    Minutos de llamadas a celular: (1.00 c/u)
+                </label>
+                <input type="number" name="minutos" id="minutos">
+            </div>
+
+            <hr>
+
+            <div id="seccion-plan">
+                <label for=""><b>Tipo de plan</b></label>
+                <br>
+                <input type="radio" name="plan" id="plan" value="tel"><span>Solo telefono </span>
+                <br>
+                <input type="radio" name="plan" id="plan" value="inter"><span>Telefono e Internet </span>
+                <br>
+                <input type="radio" name="plan" id="plan" value="TV"><span>Telefono e Internet e TV </span>
+            </div>
+
+            <hr>
+            <div id="seccion-otros">
+                <label for=""><b>Otros Servicios</b></label>
+                <br>
+                <input type="checkbox" name="antivirus" id=""><span>Antivirus </span>
+                <br>
+                <input type="checkbox" name="nube" id=""><span>Servicios de la nube</span>
+                <br>
+                <input type="checkbox" name="servicio" id=""><span>Servicios web </span>
+            </div>
+
+            <hr>
+            <div id="seccion-paquetes">
+                <label for=""><b>Paquetes</b></label>
+                <br>
+                <select name="" id="">
+                    <option value="">Residencial 10%</option>
+                    <option value="">PYMES 15%</option>
+                    <option value="">Empresas 20%</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <div id="seccion-total">
+                <label for="">Total a pagar:</label>
+                <input type="text" name="" id="" readonly>
+            </div>
+
+            <button type="submit" onclick="calcularTotal()">Calcular</button>
+
+        </div>
+
+    </form>
+    <script>
+        console.log('Hola, desde la consola')
 
 
-<br>
+        function calcularTotal(){
+            event.preventDefault();/*CANCELAR LOD ELEMENTOS*/
+            let minutos = document.getElementById("minutos");
 
-        <label for="text">Paquetes</label>
-        
+             /*let == var, var es antiguo y let es lo nuevo*/
+            let plan = document. querySelector('input[name= "plan"]:checket')
+            
+            /*opcion 1*/
+            if(plan.value == "tel" ) {
+                total = (minutos.value * 1 ) + 200} 
+                
+                
+            if(plan.value == "inter");{
+
+               total = parseInt(minutos.value) + 450 }
+
+            if (plan.value == "Tv");
+            {
+                total = parseInt(minutos.value) + 850
+
+            }
+            else if(plan.value == "tv&inter"){
+                total=parseInt(minutos.value) + 850
+            }
+            else {
+                alert("opcion indefinida")
+            }
+
+            if (antivirus)
+            { total = total}
+
+            if (nube)
+                {
+               total = total
+                }
+                
+            
+                
+             alert ("Tienes que pagar:" + total);
+
+            
+            console.log(minutos.value);
+            console.log(plan.value),
+
+            alert("Haz dado click en el boton calcular")
+        }
 
 
-         <div class="btn">
-			<button>Gracias por tu pago</button>	
-		</div>
 
+     /* 
+        Instrucciones 
+        1) crea  dos variables de tipo entero.
+        2) estas variables llenalas con la informacion que se pida al usuario.
+        3)
+     */
+    </script>
+    
+    
 </body>
 </html>
